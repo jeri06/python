@@ -1,0 +1,40 @@
+[E 190119 14:25:05 KumNewServices:37] Error on create method of SysRolePrivilegeService
+    Traceback (most recent call last):
+      File "C:\Users\jeriy\.virtualenvs\kump\lib\site-packages\sqlalchemy\orm\relationships.py", line 2264, in _determine_joins
+        consider_as_foreign_keys=consider_as_foreign_keys,
+      File "<string>", line 2, in join_condition
+      File "C:\Users\jeriy\.virtualenvs\kump\lib\site-packages\sqlalchemy\sql\selectable.py", line 1042, in _join_condition
+        % (a.description, b.description, hint)
+    sqlalchemy.exc.NoForeignKeysError: Can't find any foreign key relationships between 'kum_topic' and 'kum_news_topics'.
+    
+    During handling of the above exception, another exception occurred:
+    
+    Traceback (most recent call last):
+      File "D:\pro\kump\modules\services\KumNewServices.py", line 20, in create
+        objdb = KumNews()
+      File "<string>", line 2, in __init__
+      File "C:\Users\jeriy\.virtualenvs\kump\lib\site-packages\sqlalchemy\orm\instrumentation.py", line 408, in _new_state_if_none
+        state = self._state_constructor(instance, self)
+      File "C:\Users\jeriy\.virtualenvs\kump\lib\site-packages\sqlalchemy\util\langhelpers.py", line 839, in __get__
+        obj.__dict__[self.__name__] = result = self.fget(obj)
+      File "C:\Users\jeriy\.virtualenvs\kump\lib\site-packages\sqlalchemy\orm\instrumentation.py", line 234, in _state_constructor
+        self.dispatch.first_init(self, self.class_)
+      File "C:\Users\jeriy\.virtualenvs\kump\lib\site-packages\sqlalchemy\event\attr.py", line 297, in __call__
+        fn(*args, **kw)
+      File "C:\Users\jeriy\.virtualenvs\kump\lib\site-packages\sqlalchemy\orm\mapper.py", line 3316, in _event_on_first_init
+        configure_mappers()
+      File "C:\Users\jeriy\.virtualenvs\kump\lib\site-packages\sqlalchemy\orm\mapper.py", line 3204, in configure_mappers
+        mapper._post_configure_properties()
+      File "C:\Users\jeriy\.virtualenvs\kump\lib\site-packages\sqlalchemy\orm\mapper.py", line 1932, in _post_configure_properties
+        prop.init()
+      File "C:\Users\jeriy\.virtualenvs\kump\lib\site-packages\sqlalchemy\orm\interfaces.py", line 195, in init
+        self.do_init()
+      File "C:\Users\jeriy\.virtualenvs\kump\lib\site-packages\sqlalchemy\orm\relationships.py", line 1777, in do_init
+        self._setup_join_conditions()
+      File "C:\Users\jeriy\.virtualenvs\kump\lib\site-packages\sqlalchemy\orm\relationships.py", line 1857, in _setup_join_conditions
+        can_be_synced_fn=self._columns_are_mapped,
+      File "C:\Users\jeriy\.virtualenvs\kump\lib\site-packages\sqlalchemy\orm\relationships.py", line 2164, in __init__
+        self._determine_joins()
+      File "C:\Users\jeriy\.virtualenvs\kump\lib\site-packages\sqlalchemy\orm\relationships.py", line 2291, in _determine_joins
+        "expressions." % (self.prop, self.secondary)
+    sqlalchemy.exc.NoForeignKeysError: Could not determine join condition between parent/child tables on relationship KumNews.topics - there are no foreign keys linking these tables via secondary table 'kum_news_topics'.  Ensure that referencing columns are associated with a ForeignKey or ForeignKeyConstraint, or specify 'primaryjoin' and 'secondaryjoin' expressions.

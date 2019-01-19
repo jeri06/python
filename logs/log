@@ -1,0 +1,16 @@
+[E 190119 23:17:51 web:1114] Uncaught exception in write_error
+    Traceback (most recent call last):
+      File "C:\Users\jeriy\.virtualenvs\kump\lib\site-packages\tornado\web.py", line 1590, in _execute
+        result = method(*self.path_args, **self.path_kwargs)
+      File "C:\Users\jeriy\.virtualenvs\kump\lib\site-packages\tornado\web.py", line 226, in get
+        raise HTTPError(405)
+    tornado.web.HTTPError: HTTP 405: Method Not Allowed
+    
+    During handling of the above exception, another exception occurred:
+    
+    Traceback (most recent call last):
+      File "C:\Users\jeriy\.virtualenvs\kump\lib\site-packages\tornado\web.py", line 1112, in send_error
+        self.write_error(status_code, **kwargs)
+      File "D:\pro\kump\core\BaseController.py", line 64, in write_error
+        RequestHandler.write_error(status_code=status_code, **kwargs)
+    TypeError: write_error() missing 1 required positional argument: 'self'

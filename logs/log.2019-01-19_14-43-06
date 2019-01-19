@@ -1,0 +1,62 @@
+[E 190119 14:37:15 KumNewsController:35] (psycopg2.IntegrityError) duplicate key value violates unique constraint "kum_topics_pkey"
+    DETAIL:  Key (id)=(1) already exists.
+     [SQL: 'INSERT INTO kum_topics (id, topicid) VALUES (%(id)s, %(topicid)s)'] [parameters: ({'id': 1, 'topicid': None}, {'id': 2, 'topicid': None})] (Background on this error at: http://sqlalche.me/e/gkpj)
+    Traceback (most recent call last):
+      File "C:\Users\jeriy\.virtualenvs\kump\lib\site-packages\sqlalchemy\engine\base.py", line 1210, in _execute_context
+        cursor, statement, parameters, context
+      File "C:\Users\jeriy\.virtualenvs\kump\lib\site-packages\sqlalchemy\dialects\postgresql\psycopg2.py", line 718, in do_executemany
+        cursor.executemany(statement, parameters)
+    psycopg2.IntegrityError: duplicate key value violates unique constraint "kum_topics_pkey"
+    DETAIL:  Key (id)=(1) already exists.
+    
+    
+    The above exception was the direct cause of the following exception:
+    
+    Traceback (most recent call last):
+      File "D:\pro\kump\modules\controllers\KumNewsController.py", line 30, in post
+        self.db_session.commit()
+      File "C:\Users\jeriy\.virtualenvs\kump\lib\site-packages\sqlalchemy\orm\session.py", line 1008, in commit
+        self.transaction.commit()
+      File "C:\Users\jeriy\.virtualenvs\kump\lib\site-packages\sqlalchemy\orm\session.py", line 487, in commit
+        self._prepare_impl()
+      File "C:\Users\jeriy\.virtualenvs\kump\lib\site-packages\sqlalchemy\orm\session.py", line 466, in _prepare_impl
+        self.session.flush()
+      File "C:\Users\jeriy\.virtualenvs\kump\lib\site-packages\sqlalchemy\orm\session.py", line 2424, in flush
+        self._flush(objects)
+      File "C:\Users\jeriy\.virtualenvs\kump\lib\site-packages\sqlalchemy\orm\session.py", line 2562, in _flush
+        transaction.rollback(_capture_exception=True)
+      File "C:\Users\jeriy\.virtualenvs\kump\lib\site-packages\sqlalchemy\util\langhelpers.py", line 67, in __exit__
+        compat.reraise(exc_type, exc_value, exc_tb)
+      File "C:\Users\jeriy\.virtualenvs\kump\lib\site-packages\sqlalchemy\util\compat.py", line 277, in reraise
+        raise value
+      File "C:\Users\jeriy\.virtualenvs\kump\lib\site-packages\sqlalchemy\orm\session.py", line 2522, in _flush
+        flush_context.execute()
+      File "C:\Users\jeriy\.virtualenvs\kump\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 416, in execute
+        rec.execute(self)
+      File "C:\Users\jeriy\.virtualenvs\kump\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 583, in execute
+        uow,
+      File "C:\Users\jeriy\.virtualenvs\kump\lib\site-packages\sqlalchemy\orm\persistence.py", line 245, in save_obj
+        insert,
+      File "C:\Users\jeriy\.virtualenvs\kump\lib\site-packages\sqlalchemy\orm\persistence.py", line 1063, in _emit_insert_statements
+        c = cached_connections[connection].execute(statement, multiparams)
+      File "C:\Users\jeriy\.virtualenvs\kump\lib\site-packages\sqlalchemy\engine\base.py", line 974, in execute
+        return meth(self, multiparams, params)
+      File "C:\Users\jeriy\.virtualenvs\kump\lib\site-packages\sqlalchemy\sql\elements.py", line 273, in _execute_on_connection
+        return connection._execute_clauseelement(self, multiparams, params)
+      File "C:\Users\jeriy\.virtualenvs\kump\lib\site-packages\sqlalchemy\engine\base.py", line 1093, in _execute_clauseelement
+        distilled_params,
+      File "C:\Users\jeriy\.virtualenvs\kump\lib\site-packages\sqlalchemy\engine\base.py", line 1234, in _execute_context
+        e, statement, parameters, cursor, context
+      File "C:\Users\jeriy\.virtualenvs\kump\lib\site-packages\sqlalchemy\engine\base.py", line 1452, in _handle_dbapi_exception
+        util.raise_from_cause(sqlalchemy_exception, exc_info)
+      File "C:\Users\jeriy\.virtualenvs\kump\lib\site-packages\sqlalchemy\util\compat.py", line 296, in raise_from_cause
+        reraise(type(exception), exception, tb=exc_tb, cause=cause)
+      File "C:\Users\jeriy\.virtualenvs\kump\lib\site-packages\sqlalchemy\util\compat.py", line 276, in reraise
+        raise value.with_traceback(tb)
+      File "C:\Users\jeriy\.virtualenvs\kump\lib\site-packages\sqlalchemy\engine\base.py", line 1210, in _execute_context
+        cursor, statement, parameters, context
+      File "C:\Users\jeriy\.virtualenvs\kump\lib\site-packages\sqlalchemy\dialects\postgresql\psycopg2.py", line 718, in do_executemany
+        cursor.executemany(statement, parameters)
+    sqlalchemy.exc.IntegrityError: (psycopg2.IntegrityError) duplicate key value violates unique constraint "kum_topics_pkey"
+    DETAIL:  Key (id)=(1) already exists.
+     [SQL: 'INSERT INTO kum_topics (id, topicid) VALUES (%(id)s, %(topicid)s)'] [parameters: ({'id': 1, 'topicid': None}, {'id': 2, 'topicid': None})] (Background on this error at: http://sqlalche.me/e/gkpj)

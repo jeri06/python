@@ -1,0 +1,5 @@
+[E 190119 15:40:08 KumNewServices:36] Error on create method of SysRolePrivilegeService
+    Traceback (most recent call last):
+      File "D:\pro\kump\modules\services\KumNewServices.py", line 28, in create
+        topic = t_kum_news_topics()
+    TypeError: 'Table' object is not callable
