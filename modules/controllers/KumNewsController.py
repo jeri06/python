@@ -34,6 +34,15 @@ class KumNewsController(BaseController):
             logging.exception(e)
         self.write(response)
         self.finish()
+       
+    @gen.coroutine
+    def get(self):
+        response = {
+            "success": True,
+            "message": "Ok"
+        }
+        self.write(response)
+        self.finish()
 
 
 urls = [
