@@ -41,6 +41,7 @@ class KumNewsController(BaseController):
             "success": True,
             "message": "Ok"
         }
+        print("masuk yang penting")
         self.write(response)
         self.finish()
 
