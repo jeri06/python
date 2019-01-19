@@ -2,8 +2,8 @@ import tornado.ioloop
 from modules.urls import app
 from config import settings
 import tornado.httpserver
-
-
+from tornado.options import define, options
+define("port")
 def run_dev(ports):
     for p in ports:
         app.listen(p)
@@ -23,7 +23,7 @@ def run_mp_support(port):
 
 if __name__ == "__main__":
     # tornado.locale.load_translations(settings['locale_path'])
-    ports = [8878]
+    ports = options.port
     run_dev(ports)
 
 
