@@ -3,7 +3,7 @@ from modules.urls import app
 from config import settings
 import tornado.httpserver
 from tornado.options import define, options
-define("port")
+define("port", default=5000, help="run on the given port", type=int)
 def run_dev(ports):
     for p in ports:
         app.listen(p)
