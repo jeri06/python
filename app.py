@@ -3,7 +3,7 @@ from modules.urls import app
 from config import settings
 import tornado.httpserver
 from tornado.options import define, options
-define("port", default=5000, help="run on the given port", type=int)
+import os
 def run_dev(ports):
     for p in ports:
         app.listen(p)
@@ -23,7 +23,8 @@ def run_mp_support(port):
 
 if __name__ == "__main__":
     # tornado.locale.load_translations(settings['locale_path'])
-    ports = [8878]
+    #port = os.environ['PORT']
+    ports = os.environ['PORT']
     run_dev(ports)
 
 
