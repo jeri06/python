@@ -3,10 +3,10 @@ import sys
 databases = {
     "default": {
         "driver": "postgres",
-        "user": "postgres",
-        "password": "root",
-        "host": "127.0.0.1",
-        "dbname": "asd",
+        "user": "ayjpprphzhgoos",
+        "password": "19704f975e87cdd33b456a8fba4f4ba8ff1d8706b9b3a414e25cfa422c4248ed",
+        "host": "ec2-54-163-246-159.compute-1.amazonaws.com",
+        "dbname": "d5j5e9p37962be",
         "port": 5432
     }
 }
