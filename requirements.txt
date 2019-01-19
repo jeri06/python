@@ -1,4 +1,5 @@
 Tornado==5.1.1
 sqlalchemy==1.2.16
 simplejson==3.16.0
+tornado_cors==0.6.0
 
