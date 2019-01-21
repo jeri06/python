@@ -25,7 +25,7 @@ if __name__ == "__main__":
     # tornado.locale.load_translations(settings['locale_path'])
     port = os.environ['PORT']
     # ports = [8889]
-    print(ports)
-    run_dev(ports)
+    print(port)
+    run_dev(port)
 
 
