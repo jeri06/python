@@ -25,7 +25,7 @@ def run_mp_support(port):
 
 if __name__ == "__main__":
     # tornado.locale.load_translations(settings['locale_path'])
-    port = os.environ['PORT']
+    port = [os.environ['PORT']]
     # ports = [8889]
     print(port)
     run_dev(port)
